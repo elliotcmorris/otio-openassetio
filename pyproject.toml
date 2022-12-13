@@ -1,0 +1,76 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2022 The Foundry Visionmongers Ltd
+
+[build-system]
+requires = [
+  "opentimelineio >= 0.12.0",
+  "setuptools>=65.5.0"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "otio-openassetio"
+version = "0.0.0"
+requires-python = ">=3.7"
+dependencies = [
+    "openassetio >= 1.0.0a7",
+    "openassetio-mediacreation >= 1.0.0a2",
+    "opentimelineio >= 0.12.0"
+    ]
+
+authors = [
+    { name = "Contributors to the OpenAssetIO project", email = "openassetio-discussion@lists.aswf.io" }
+]
+description = """\
+    Adds asset resolution to OpenTimelineIO via the OpenAssetIO API.
+    """
+keywords = ["timeline", "openassetio", "opentimelineio", "media"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Multimedia :: Video :: Display",
+    "Topic :: Multimedia :: Video :: Non-Linear Editor",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Operating System :: POSIX :: Linux ",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+]
+readme = "README.md"
+
+[project.optional-dependencies]
+dev = ["openassetio-manager-bal >= 1.0.0a3",
+       "pytest"
+      ]
+
+[project.urls]
+OpenAssetIO = "https://github.com/OpenAssetIO/OpenAssetIO"
+OpenTimelineIO = "https://github.com/AcademySoftwareFoundation/OpenTimelineIO"
+Source = "https://github.com/OpenAssetIO/otio-openassetio"
+Issues = "https://github.com/OpenAssetIO/otio-openassetio/issues"
+
+[options.extras_require]
+dev = [
+    "black",
+    "pytest",
+    "twine"
+]
+
+# NB: This requires the use of pyproject-flake8
+[tool.flake8]
+max-line-length = 99
+extend-ignore = "E266,"
+
+[tool.pylint.messages_control]
+disable = [
+    "missing-function-docstring"
+]
+
+[tool.pylint.format]
+max-line-length = 99
+
+[tool.black]
+line-length = 99
+target-version = ["py39"]
