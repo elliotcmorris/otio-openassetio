@@ -32,7 +32,13 @@ setuptools.setup(
         "openassetio-mediacreation >= 1.0.0a2",
     ],
     extras_require={
-        "dev": ["black", "pytest", "twine", "openassetio-manager-bal >= 1.0.0a3"]
+        "dev": [
+            "black",
+            "pytest",
+            "flake8",
+            "twine",
+            "openassetio-manager-bal >= 1.0.0a3",
+        ]
     },
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
